@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-移动端开发---rem-less适配总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91---rem-less%E9%80%82%E9%85%8D%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2019-12-26T13:20:15.085Z" itemprop="datePublished">2019-12-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91---rem-less%E9%80%82%E9%85%8D%E6%80%BB%E7%BB%93/">移动端开发---rem-less适配总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="移动端开发—rem-less适配总结"><a href="#移动端开发—rem-less适配总结" class="headerlink" title="移动端开发—rem-less适配总结"></a>移动端开发—rem-less适配总结</h3><h5 id="1-使用fixed布局会脱离文档流，可以设置padding显示其他的元素。"><a href="#1-使用fixed布局会脱离文档流，可以设置padding显示其他的元素。" class="headerlink" title="1. 使用fixed布局会脱离文档流，可以设置padding显示其他的元素。"></a>1. 使用fixed布局会脱离文档流，可以设置padding显示其他的元素。</h5><h5 id="2-使用less设置样式的嵌套案例："><a href="#2-使用less设置样式的嵌套案例：" class="headerlink" title="2.使用less设置样式的嵌套案例："></a>2.使用less设置样式的嵌套案例：</h5><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span>&#123; <span class="selector-tag">&amp;</span><span class="selector-pseudo">:first-child</span>&#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100%</span>*<span class="number">10</span>;</span><br><span class="line">      <span class="attribute">transform</span>: translateX(-<span class="number">100%</span>/<span class="number">10</span>);</span><br><span class="line">      <span class="attribute">-webkit-transform</span>: translateX(-<span class="number">100%</span>/<span class="number">10</span>);</span><br><span class="line">      <span class="selector-tag">li</span>&#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">100%</span>/<span class="number">10</span>;</span><br><span class="line">        <span class="attribute">float</span>: left;</span><br><span class="line">        <span class="selector-tag">a</span>&#123;</span><br><span class="line">          <span class="attribute">display</span>: block;</span><br><span class="line">          <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">          <span class="selector-tag">img</span>&#123;</span><br><span class="line">            <span class="attribute">display</span>: block;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-使用rem适配就不用二倍图的设置了，rem是针对内容的设置。"><a href="#3-使用rem适配就不用二倍图的设置了，rem是针对内容的设置。" class="headerlink" title="3.使用rem适配就不用二倍图的设置了，rem是针对内容的设置。"></a>3.使用rem适配就不用二倍图的设置了，rem是针对内容的设置。</h5><p>如下例子中，背景位置直接使用换算公式以rem为单位，不用px。当设计稿尺寸重定义之后，只需要将@baseFontSize 重新设置为：<strong>新设计稿尺寸/原设计稿尺寸*原@baseFontSize</strong>即可</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">&amp;</span><span class="selector-class">.icon_category</span>&#123;      </span><br><span class="line">		<span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">background</span>: url(<span class="string">"../images/icon_category.png"</span>) no-repeat center / <span class="number">44rem</span>/<span class="variable">@baseFontSize</span> <span class="number">70rem</span>/<span class="variable">@baseFontSize</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-使用定位实现块级元素居中，left：50-，margin-left：-元素宽度的一半。（适合宽度有具体值的元素）"><a href="#4-使用定位实现块级元素居中，left：50-，margin-left：-元素宽度的一半。（适合宽度有具体值的元素）" class="headerlink" title="4.使用定位实现块级元素居中，left：50%，margin-left：-元素宽度的一半。（适合宽度有具体值的元素）"></a>4.使用定位实现块级元素居中，left：50%，margin-left：-元素宽度的一半。（适合宽度有具体值的元素）</h5><h5 id="5-zepto-js-与jQuery类似，查官网看属性即可。比如下面的使用例子实现轮播图（查找子元素、on绑定函数、设置css样式等）："><a href="#5-zepto-js-与jQuery类似，查官网看属性即可。比如下面的使用例子实现轮播图（查找子元素、on绑定函数、设置css样式等）：" class="headerlink" title="5.zepto.js 与jQuery类似，查官网看属性即可。比如下面的使用例子实现轮播图（查找子元素、on绑定函数、设置css样式等）："></a>5.zepto.js 与jQuery类似，查官网看属性即可。比如下面的使用例子实现轮播图（查找子元素、on绑定函数、设置css样式等）：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">/*手势切换轮播图*/</span></span><br><span class="line">    <span class="comment">/*1.自动轮播 无缝*/</span></span><br><span class="line">    <span class="comment">/*2.点随着变化*/</span></span><br><span class="line">    <span class="comment">/*3.完成手势切换*/</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> $banner = $(<span class="string">'.sn_banner'</span>);</span><br><span class="line">    <span class="keyword">var</span> width = $banner.width();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> $imageBox = $banner.find(<span class="string">'ul:first'</span>);</span><br><span class="line">    <span class="keyword">var</span> $pointBox = $banner.find(<span class="string">'ul:last'</span>);</span><br><span class="line">    <span class="keyword">var</span> $points = $pointBox.find(<span class="string">'li'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> animationFuc = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">/*动画*/</span></span><br><span class="line">        $imageBox.animate(&#123;<span class="attr">transform</span>:<span class="string">'translateX('</span>+(-index*width)+<span class="string">'px)'</span>&#125;,<span class="number">200</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">/*动画执行完成的回调*/</span></span><br><span class="line">            <span class="keyword">if</span>(index &gt;= <span class="number">9</span>)&#123;</span><br><span class="line">                index = <span class="number">1</span>;</span><br><span class="line">                <span class="comment">/*瞬间*/</span></span><br><span class="line">                $imageBox.css(&#123;<span class="attr">transform</span>:<span class="string">'translateX('</span>+(-index*width)+<span class="string">'px)'</span>&#125;);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(index &lt;= <span class="number">0</span> )&#123;</span><br><span class="line">                index = <span class="number">8</span>;</span><br><span class="line">                <span class="comment">/*瞬间*/</span></span><br><span class="line">                $imageBox.css(&#123;<span class="attr">transform</span>:<span class="string">'translateX('</span>+(-index*width)+<span class="string">'px)'</span>&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">/*index  1-8*/</span></span><br><span class="line">            <span class="comment">/*2.点随着变化*/</span></span><br><span class="line">            $points.removeClass(<span class="string">'now'</span>).eq(index<span class="number">-1</span>).addClass(<span class="string">'now'</span>);</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*1.自动轮播 无缝*/</span></span><br><span class="line">    <span class="keyword">var</span> index = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> timer = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        index ++;</span><br><span class="line">        animationFuc();</span><br><span class="line">    &#125;,<span class="number">5000</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*3.完成手势切换  android 4.0 兼容 */</span></span><br><span class="line">    <span class="comment">/*左滑的手势  下一张*/</span></span><br><span class="line">    $banner.on(<span class="string">'swipeLeft'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        index ++;</span><br><span class="line">        animationFuc();</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">/*右滑的手势  上一张*/</span></span><br><span class="line">    $banner.on(<span class="string">'swipeRight'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        index --;</span><br><span class="line">        animationFuc();</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-margin-0-auto-能实现块级元素的居中。img-不可设置宽度100-。"><a href="#6-margin-0-auto-能实现块级元素的居中。img-不可设置宽度100-。" class="headerlink" title="6.margin:0 auto 能实现块级元素的居中。img 不可设置宽度100%。"></a>6.margin:0 auto 能实现块级元素的居中。img 不可设置宽度100%。</h5><h5 id="7-使用ul–-gt-li–-gt-a–-gt-img–-gt-p结构实现多个导航图标。根据一行想要显示的li个数设置li的宽度百分比。"><a href="#7-使用ul–-gt-li–-gt-a–-gt-img–-gt-p结构实现多个导航图标。根据一行想要显示的li个数设置li的宽度百分比。" class="headerlink" title="7.使用ul–&gt;li–&gt;a–&gt;img–&gt;p结构实现多个导航图标。根据一行想要显示的li个数设置li的宽度百分比。"></a>7.使用ul–&gt;li–&gt;a–&gt;img–&gt;p结构实现多个导航图标。根据一行想要显示的li个数设置li的宽度百分比。</h5><p>如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.sn_nav</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10rem</span>/<span class="variable">@baseFontSize</span>;</span><br><span class="line">  <span class="selector-tag">ul</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="selector-tag">li</span>&#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">20%</span>;</span><br><span class="line">      <span class="attribute">float</span>: left;</span><br><span class="line">      <span class="selector-tag">a</span>&#123;</span><br><span class="line">        <span class="attribute">display</span>: block;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">        <span class="selector-tag">img</span>&#123;</span><br><span class="line">          <span class="attribute">display</span>: block;</span><br><span class="line">          <span class="attribute">width</span>: <span class="number">80rem</span>/<span class="variable">@baseFontSize</span>;</span><br><span class="line">          <span class="attribute">height</span>: <span class="number">80rem</span>/<span class="variable">@baseFontSize</span>;</span><br><span class="line">          <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-tag">p</span>&#123;</span><br><span class="line">          <span class="attribute">text-align</span>: center;</span><br><span class="line">          <span class="attribute">font-size</span>: <span class="number">20rem</span>/<span class="variable">@baseFontSize</span>;</span><br><span class="line">          <span class="attribute">padding</span>: <span class="number">5rem</span>/<span class="variable">@baseFontSize</span>;</span><br><span class="line">          <span class="attribute">color</span>: <span class="number">#666</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91---rem-less%E9%80%82%E9%85%8D%E6%80%BB%E7%BB%93/" data-id="ck4mr8jd100025kwzed9uh6jx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-移动端开发视频记录" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%86%E9%A2%91%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time datetime="2019-12-26T13:20:15.077Z" itemprop="datePublished">2019-12-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%86%E9%A2%91%E8%AE%B0%E5%BD%95/">移动端开发视频记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="移动京东项目练习记录"><a href="#移动京东项目练习记录" class="headerlink" title="移动京东项目练习记录"></a>移动京东项目练习记录</h3><ol>
+<li><p>流式布局与移动端适配的基本要求</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">/*流式布局：就是百分比布局，非固定像素，内容向两侧填充，理解成流动的布局，称为流式布局*/</span></span><br><span class="line">   <span class="comment">/*视觉窗口：viewport,是移动端特有。这是一个虚拟的区域，承载网页的。</span></span><br><span class="line"><span class="comment">     承载关系：浏览器----&gt;viewport----&gt;网页</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   <span class="comment">/*适配要求：</span></span><br><span class="line"><span class="comment">       1. 网页宽度必须和浏览器保持一致（因为只要横向不出现滚动条就好）</span></span><br><span class="line"><span class="comment">       2. 默认显示的缩放比例和PC端保持（缩放比例为1.0时和网页上一致）</span></span><br><span class="line"><span class="comment">       3. 不允许用户自行缩放网页（否则破坏了网页的显示方式）</span></span><br><span class="line"><span class="comment">       满足这些要求达到了适配，国际上通用的适配方案，标准的移动端适配方案。</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">    <span class="comment">/*防止内容溢出  不出现滚动条  提供用户体验*/</span></span><br><span class="line">           <span class="selector-tag">box-sizing</span>: <span class="selector-tag">border-box</span>;</span><br><span class="line"><span class="comment">/*手机端的浏览器大多数都是使用webkit内核，故要这么适配*/</span></span><br><span class="line"><span class="selector-tag">-webkit-box-sizing</span>: <span class="selector-tag">border-box</span>;</span><br><span class="line"><span class="comment">/*点击高亮效果的清除*/</span></span><br><span class="line"><span class="selector-tag">tap-highlight-color</span>: <span class="selector-tag">transparent</span>;</span><br><span class="line"><span class="selector-tag">-webkit-tap-highlight-color</span>: <span class="selector-tag">transparent</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>绑定事件的几个方式</p>
+<ul>
+<li><p>on 只能绑定一次事件，但是可以兼容各种浏览器</p>
+</li>
+<li><p>addeventlistener  适合各种谷歌相关的浏览器，可以绑定多次事件</p>
+</li>
+<li><p>attachEvent 适合IE浏览器，可以多次绑定 但是里面事件名有on</p>
+<p>eg:touch事件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div=<span class="built_in">document</span>.querySelector(<span class="string">".div1"</span>);</span><br><span class="line">div.addEventListener(<span class="string">"touchstart"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"start！"</span>)</span><br><span class="line">&#125;);</span><br><span class="line">div.addEventListener(<span class="string">"touchmove"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"start move！"</span>)</span><br><span class="line">&#125;);</span><br><span class="line">div.addEventListener(<span class="string">"touchend"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"end move！"</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>关于触摸事件的补充，注意几个坐标的差异</p>
+<p>在每一个触摸点中会记录当前触摸点的坐标 e.touches[0] 第一个触摸点<br> clientX clientY      基于浏览器窗口（视口）<br>pageX   pageY        基于页面（视口）<br>screenX screenY      基于屏幕</p>
+</li>
+<li><p>倒计时 设置时分秒</p>
+<p>var timeDown = function() {</p>
+<pre><code>var time = 2 * 60 * 60;</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	time--;<span class="comment">//使用定时器，自动减时间，更新时间</span></span><br><span class="line">	<span class="keyword">var</span> h = <span class="built_in">Math</span>.floor(time / <span class="number">3600</span>);<span class="comment">//小时</span></span><br><span class="line">	<span class="keyword">var</span> m = <span class="built_in">Math</span>.floor(time % <span class="number">3600</span> / <span class="number">60</span>);<span class="comment">//分钟</span></span><br><span class="line">	<span class="keyword">var</span> s = time % <span class="number">60</span>;<span class="comment">//秒</span></span><br><span class="line">	<span class="keyword">var</span> spans = <span class="built_in">document</span>.querySelectorAll(<span class="string">" .all-time span"</span>);</span><br><span class="line">	spans[<span class="number">0</span>].innerHTML = <span class="built_in">Math</span>.floor(h / <span class="number">10</span>);<span class="comment">//向下取整得到十位数</span></span><br><span class="line">	spans[<span class="number">1</span>].innerHTML = <span class="built_in">Math</span>.floor(h % <span class="number">10</span>);<span class="comment">//取余得到个位数</span></span><br><span class="line">	spans[<span class="number">3</span>].innerHTML = <span class="built_in">Math</span>.floor(m / <span class="number">10</span>);</span><br><span class="line">	spans[<span class="number">4</span>].innerHTML = <span class="built_in">Math</span>.floor(m % <span class="number">10</span>);</span><br><span class="line">	spans[<span class="number">6</span>].innerHTML = <span class="built_in">Math</span>.floor(s / <span class="number">10</span>);</span><br><span class="line">	spans[<span class="number">7</span>].innerHTML = <span class="built_in">Math</span>.floor(s % <span class="number">10</span>);</span><br><span class="line">&#125;, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>两栏自适应</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span></span><br><span class="line">	我是内容我是内容我是内容我是内容我是内容我是内容我是内容</span><br><span class="line">	我是内容我是内容我是内容我是内容我是内容我是内容我是内容</span><br><span class="line">	我是内容我是内容我是内容我是内容我是内容我是内容我是内容</span><br><span class="line">	我是内容我是内容我是内容我是内容我是内容我是内容我是内容</span><br><span class="line">	我是内容我是内容我是内容我是内容我是内容我是内容我是内容</span><br><span class="line">	我是内容我是内容我是内容我是内容我是内容我是内容我是内容</span><br><span class="line">	我是内容我是内容我是内容我是内容我是内容我是内容我是内容</span><br><span class="line">	我是内容我是内容我是内容我是内容我是内容我是内容我是内容</span><br><span class="line">	我是内容我是内容我是内容我是内容我是内容我是内容我是内容</span><br><span class="line">	我是内容我是内容我是内容我是内容我是内容我是内容我是内容</span><br><span class="line">	我是内容我是内容我是内容我是内容我是内容我是内容我是内容</span><br><span class="line">	我是内容我是内容我是内容我是内容我是内容我是内容我是内容</span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box1</span>&#123;</span><br><span class="line">          <span class="comment">/*设置浮动和宽度*/</span></span><br><span class="line">		<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">		<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">		<span class="attribute">background-color</span>: pink;</span><br><span class="line">		<span class="attribute">float</span>: left;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.box2</span>&#123;</span><br><span class="line">		<span class="comment">/*可以清楚浮动，可以让自己绝对绝缘 bfc*/</span></span><br><span class="line">              <span class="comment">/*不让其他浮动元素影响自己*/</span></span><br><span class="line">          <span class="comment">/*不让自己的浮动去影响别的元素*/</span></span><br><span class="line">		<span class="attribute">overflow</span>:hidden;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:%5CUsers%5CRenYa%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20191204222721261.png" alt=""></p>
+</li>
+</ol>
+<ol start="6">
+<li><p>图标的裁切提升响应面积</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">44px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">12px</span> <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="comment">/*让背景从内容开始平铺*/</span></span><br><span class="line">    <span class="attribute">background-origin</span>: content-box;</span><br><span class="line">    <span class="comment">/*没有做背景裁剪 背景图默认就是从边框显示*/</span></span><br><span class="line">    <span class="comment">/*默认的就是</span></span><br><span class="line"><span class="comment">    border-box  边框以外被裁剪掉</span></span><br><span class="line"><span class="comment">    padding-box 内边距以外被裁剪掉</span></span><br><span class="line"><span class="comment">    content-box 内容以外被裁剪掉</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="attribute">background-clip</span>: content-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>两个盒子，设置上面盒子高度之后，在设置下面盒子占据剩余高度</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.jd_main&#123;</span><br><span class="line">    <span class="comment">/*占满剩余的高度*/</span></span><br><span class="line">    width: <span class="number">100</span>%;</span><br><span class="line">    height: <span class="number">100</span>%;</span><br><span class="line">    padding-top: <span class="number">45</span>px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图片下间隙的处理方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    <span class="comment">/*font-size: 0px;*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*img&#123;</span></span><br><span class="line"><span class="comment">    display: block;</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line">img&#123;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现一个盒子的居中，使用margin：0 auto ; 是在父容器中居中，因此要设置宽度。但是如果该盒子设置了定位，margin居中将不可用。</p>
+</li>
+<li><p>行内元素，只要设置行高和高度,使得文本水平垂直居中即可</p>
+</li>
+<li><p>关于选择器加空格问题</p>
+<ul>
+<li><p>没有加空格表示同级元素<code>li.now</code></p>
+</li>
+<li><p>当两个选择器之间有空格的情况下，代表的是子类选择器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.a .b&#123;&#125;</span><br><span class="line"><span class="comment">/*代表的是a类的b子类 */</span></span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"a b"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="comment">/*.a.b&#123;&#125;两个选择器之间没有空格的情况下，代表的是同时拥有两个类名的标签*/</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ol>
+<ol start="12">
+<li><p>清除浮动 (当子元素设置了float属性之后，且父元素的高度和宽度没有进行设置，而是由子元素支撑起来，则会导致父元素的高度塌陷(原本的height后来被置为0))</p>
+<p>即子元素要浮动，则其父元素就要清除浮动，否则子元素不在里面。</p>
+<p><strong>清除浮动的方式:</strong></p>
+<pre><code>* 在父元素内添加冗余元素clear:both;
+* 在父元素中设置属性overflow:hidden||auto
+* after 方法(伪元素选择器的方法)</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearFix</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.clearFix</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">visibility</span>: hidden;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>13 . 设置精灵图公共样式，之后再为每个图标单独设置位置</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[class^=<span class="string">"icon-"</span>]</span>,<span class="selector-attr">[class*=<span class="string">" icon-"</span>]</span>&#123;</span><br><span class="line">	<span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"../images/sprites.png"</span>);</span><br><span class="line">    <span class="attribute">background-size</span>: <span class="number">200px</span> <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="14">
+<li>伪元素可以替代一些span，用于设置小图标，默认行内元素，要设置为block</li>
+<li>一些小细节<ul>
+<li>设置h3不是粗体font-weight：normal</li>
+<li>包含多个内容使用div，比如里面放多个span</li>
+<li>背景图不需要设置位置就写center</li>
+<li>设置浮动会转化为块级元素</li>
+<li>a中有图，设置为block，可不设置宽</li>
+<li>a img 设置margin居中 设置宽度 设置block消除下边距</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>##  </code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%86%E9%A2%91%E8%AE%B0%E5%BD%95/" data-id="ck4mr8jcv00015kwzd9i83db8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-first-page" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/26/first-page/" class="article-date">
+  <time datetime="2019-12-26T13:07:39.000Z" itemprop="datePublished">2019-12-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/26/first-page/">first page</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="终于搭建了一个博客"><a href="#终于搭建了一个博客" class="headerlink" title="终于搭建了一个博客"></a>终于搭建了一个博客</h3><h4 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h4><h4 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h4><p>​    </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/26/first-page/" data-id="ck4mr6l6u00005kwz7yfg06bu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/26/hello-world/" class="article-date">
+  <time datetime="2019-12-26T12:47:53.426Z" itemprop="datePublished">2019-12-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/26/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/26/hello-world/" data-id="ck4mqqo02000024wz350e0jl4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91---rem-less%E9%80%82%E9%85%8D%E6%80%BB%E7%BB%93/">移动端开发---rem-less适配总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/26/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%86%E9%A2%91%E8%AE%B0%E5%BD%95/">移动端开发视频记录</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/26/first-page/">first page</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/26/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
